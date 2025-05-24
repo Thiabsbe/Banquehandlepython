@@ -81,7 +81,17 @@ while True:
         5. Appliquer intérêt
         6. Quitter
           """)
+    
+    """  print("Liste des compte")
+    with open("compte.txt","r") as f:
+        for ligne in f:
+            print(ligne.strip()) """
+
+    
+   
     try:
+        
+
         choix = int(input("Veuiilez indiquez votre choix: "))
         if choix == 1:
             proprio = input("Merci de renseigner  le nom du propriétaire du compte: ")
@@ -104,6 +114,10 @@ while True:
 
             comptes.append(compte)
             print("Compte crée avec succes")
+
+            with open("compte.txt","a") as f:
+                f.write(f"{proprio};{solde_compte}\n")
+
         
         if choix == 2:
             print("Liste des Compte")
@@ -162,7 +176,10 @@ while True:
         
         if choix == 6:
             print("Bye Bye!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-            break           
+            break   
+        
+        
+                    
 
     except(ValueError):
         print("Veuillez entrer un numero correcte")    
